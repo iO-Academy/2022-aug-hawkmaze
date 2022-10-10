@@ -107,6 +107,7 @@ img {
     top: 0;
     left: 0;
     position: absolute;
+    z-index: 5;
 }
 
 .line {
@@ -127,7 +128,13 @@ img {
 }
 
 #lineOne {
-    top: 200px;
-    left: 150px;
-    height: 242px;
+    top: 165px;
+    left: 100px;
+    height: 120px;
+}
+
+#lineTwo {
+    top: 214px;
+    left: 148px;
+    height: 120px;
 }
