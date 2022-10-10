@@ -83,6 +83,31 @@ img {
 }
 
 /* -----Maze section----- */
+.startArea {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.startBtn {
+    font-size: 2.3rem;
+    width: 6rem;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 65px;
+    left: 20px;
+    z-index: 10;
+}
+
+.startBush {
+    width: 8rem;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
 
 .line {
     background-color: var(--brown);
@@ -102,7 +127,7 @@ img {
 }
 
 #lineOne {
-    top: 336px;
-    left: 266px;
+    top: 200px;
+    left: 150px;
     height: 242px;
 }
