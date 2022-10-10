@@ -72,7 +72,7 @@ img {
     margin: 0;
 }
 
-.content div {
+.content .instructions {
     width: 70%;
     margin: 0 auto;
 }
@@ -90,7 +90,7 @@ img {
 }
 
 .thick {
-    width: 1px;
+    width: 24px;
 }
 
 .thin {
