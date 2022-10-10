@@ -181,3 +181,46 @@ img {
     left: 690px;
     height: 90px;
 }
+
+.hawk1 {
+    position: absolute;
+    top: 320px;
+    left: 100px;
+    width: 6rem;
+}
+
+.hawk2 {
+    position: absolute;
+    top: 240px;
+    left: 480px;
+    width: 6rem;
+}
+
+.snake {
+    position: absolute;
+    top: 160px;
+    left: 315px;
+    width: 6rem;
+}
+
+
+.tree1 {
+    position: absolute;
+    top: 286px;
+    left: 250px;
+    width: 10rem;
+}
+
+.tree2 {
+    position: absolute;
+    top: 170px;
+    left: 640px;
+    width: 8rem;
+}
+
+.nest {
+    position: absolute;
+    top: 440px;
+    left: 650px;
+    width: 6rem;
+}
