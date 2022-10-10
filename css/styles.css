@@ -3,6 +3,16 @@
     box-sizing: border-box;
 }
 
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
+
 :root {
     --dark: #2d472a;
     --light: #406343;
@@ -48,7 +58,6 @@ img {
     padding: 1rem;
     font-size: 1.5rem;
     margin: 0;
-
 }
 
 .content div {
@@ -64,8 +73,6 @@ img {
     width: 17.5rem;
     font-size: 3rem;
     border-radius: 0.5rem;
-
     display: flex;
     justify-content: center;
-
 }
