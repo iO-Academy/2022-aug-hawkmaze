@@ -16,6 +16,7 @@ a:active {
 :root {
     --dark: #2d472a;
     --light: #406343;
+    --brown: #635340;
     --white: #ffffff;
 }
 
@@ -83,3 +84,25 @@ img {
 
 /* -----Maze section----- */
 
+.line {
+    background-color: var(--brown);
+    position: absolute;
+}
+
+.thick {
+    width: 1px;
+}
+
+.thin {
+    width: 14px;
+}
+
+.horizontal {
+    transform: rotate(90deg);
+}
+
+#lineOne {
+    top: 336px;
+    left: 266px;
+    height: 242px;
+}
