@@ -20,6 +20,7 @@ a:active {
     --light: #406343;
     --brown: #635340;
     --white: #ffffff;
+    --dim: #00000050;
 }
 
 body {
@@ -49,9 +50,49 @@ a {
 img {
     width: 16rem;
     height: auto;
-    left: -10rem;
+    left: 40rem;
     top: 10rem;
     position: absolute;
+}
+
+/* -----Popups----- */
+.modal {
+    background-color: var(--dim);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    overflow: auto;
+    z-index: 15;
+}
+
+.modalContent {
+    background-color: var(--light);
+    width: 30rem;
+    margin: 11rem auto 0 auto;
+    border: 0.2rem solid var(--white);
+    padding: 1.8rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent h2 {
+    font-size: 6rem;
+    margin: 1rem 0;
+    font-weight: lighter;
+    line-height: 1rem;
+}
+
+.modalContent p {
+    font-size: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.modalContent a {
+    background-color: var(--dark);
 }
 
 /* -----Main content section----- */
