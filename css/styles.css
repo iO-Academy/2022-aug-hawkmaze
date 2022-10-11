@@ -1,4 +1,6 @@
 /* -----global styles----- */
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -29,7 +31,7 @@ body {
 h1 {
     text-align: center;
     font-size: 5rem;
-    margin: 0;
+    margin: 0 0 1rem;
 }
 
 a {
@@ -38,7 +40,7 @@ a {
     color: var(--white);
     width: 17.5rem;
     border-radius: 0.5rem;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
 
     display: flex;
     justify-content: center;
@@ -111,6 +113,7 @@ img {
 .line {
     background-color: var(--brown);
     position: absolute;
+    cursor: crosshair;
 }
 
 .thick {
@@ -198,7 +201,6 @@ img {
     top: 160px;
     left: 315px;
     position: absolute;
-
 }
 
 .tree1 {
@@ -220,5 +222,4 @@ img {
     top: 440px;
     left: 650px;
     position: absolute;
-
 }
