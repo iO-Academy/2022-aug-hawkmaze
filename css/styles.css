@@ -33,26 +33,23 @@ h1 {
 }
 
 a {
-    border: none;
-    margin: 1rem auto;
+    font-size: 3rem;
     background-color: var(--light);
     color: var(--white);
     width: 17.5rem;
-    font-size: 3rem;
     border-radius: 0.5rem;
+    margin: 1rem auto;
 
     display: flex;
     justify-content: center;
 }
 
-
-
 img {
-    position: absolute;
     width: 16rem;
     height: auto;
     left: -10rem;
     top: 10rem;
+    position: absolute;
 }
 
 /* -----Main content section----- */
@@ -81,10 +78,6 @@ img {
 .content .instructions {
     width: 70%;
     margin: 0 auto;
-}
-
-.enter {
-
 }
 
 /* -----Maze section----- */
@@ -206,7 +199,6 @@ img {
     left: 315px;
     width: 6rem;
 }
-
 
 .tree1 {
     position: absolute;
