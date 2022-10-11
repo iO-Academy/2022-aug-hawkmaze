@@ -8,20 +8,16 @@ const startArea = document.querySelector('.startArea');
 
 // event Handlers for win and lose conditions
 const lose = () => {
-    loseModal.style.display = "block"; // change to display modals
-    // console.log('Lost');
+    loseModal.style.display = "block";
 }
 
 const win = () => {
-    winModal.style.display = "block"; // change to display modals
-    // console.log('Won!');
-
+    winModal.style.display = "block";
 }
 
-function stopPropagation(ev) {
+const stopPropagation = (ev) => {
     ev.stopPropagation();
 }
-
 
 // event listeners for win and lose
 const listenForCollisions = () => {
@@ -36,6 +32,7 @@ const listenForLeaveMaze = () => {
         item.addEventListener('mouseover', stopPropagation);
     });
 }
+
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
 }
@@ -61,11 +58,9 @@ const gameStart = (ev) => {
     listenForLeaveMaze();
 
     listenForStartArea();
-
     /*
     *  insert callbacks for animations
     * */
-
 }
 
 startButton.addEventListener('click', gameStart);
