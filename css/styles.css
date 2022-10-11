@@ -1,4 +1,4 @@
-/*global styles*/
+/* -----global styles----- */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -57,9 +57,9 @@ img {
     height: 32rem;
     width: 50rem;
     background-color: var(--light);
-    margin: 0 auto;
     padding: 2rem;
     border-radius: 2rem;
+    margin: 0 auto;
     position: relative;
 }
 
@@ -70,8 +70,8 @@ img {
 }
 
 .content p {
-    padding: 1rem;
     font-size: 1.5rem;
+    padding: 1rem;
     margin: 0;
 }
 
@@ -82,19 +82,19 @@ img {
 
 /* -----Maze section----- */
 .startArea {
-    position: relative;
     top: 10px;
     left: 10px;
+    position: relative;
 }
 
 .startBtn {
     font-size: 2.3rem;
     width: 6rem;
-    position: absolute;
     padding: 0;
     margin: 0;
     top: 65px;
     left: 20px;
+    position: absolute;
     z-index: 10;
 }
 
@@ -180,43 +180,45 @@ img {
 }
 
 .hawk1 {
-    position: absolute;
+    width: 6rem;
     top: 320px;
     left: 100px;
-    width: 6rem;
+    position: absolute;
 }
 
 .hawk2 {
-    position: absolute;
+    width: 6rem;
     top: 240px;
     left: 480px;
-    width: 6rem;
+    position: absolute;
 }
 
 .snake {
-    position: absolute;
+    width: 6rem;
     top: 160px;
     left: 315px;
-    width: 6rem;
+    position: absolute;
+
 }
 
 .tree1 {
-    position: absolute;
+    width: 10rem;
     top: 286px;
     left: 250px;
-    width: 10rem;
+    position: absolute;
 }
 
 .tree2 {
-    position: absolute;
+    width: 8rem;
     top: 170px;
     left: 640px;
-    width: 8rem;
+    position: absolute;
 }
 
 .nest {
-    position: absolute;
+    width: 6rem;
     top: 440px;
     left: 650px;
-    width: 6rem;
+    position: absolute;
+
 }
