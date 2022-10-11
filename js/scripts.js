@@ -15,7 +15,7 @@ const win = () => {
     winModal.style.display = "block";
 }
 
-function stopPropagation(ev) {
+const stopPropagation = (ev) => {
     ev.stopPropagation();
 }
 
@@ -32,6 +32,7 @@ const listenForLeaveMaze = () => {
         item.addEventListener('mouseover', stopPropagation);
     });
 }
+
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
 }
