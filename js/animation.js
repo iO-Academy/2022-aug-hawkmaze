@@ -2,7 +2,7 @@
 /*
  Constructor for the creatures
  Arrow functions cannot be used as constructors and will throw an error when used with new
-* */
+*/
 export const Creature = function(element, aniFrame, startPos, endPos, action = 'moveRight') {
     this.element = element;    // For which element you're selecting
     this.aniFrame = aniFrame;  // Empty variable which to be redefined with a callback to the animation function

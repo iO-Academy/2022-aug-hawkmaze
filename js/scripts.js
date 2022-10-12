@@ -17,19 +17,22 @@ const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
 const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
 
 /* -----Main content----- */
-// event Handlers for win and lose conditions
-const lose = () => {
-    loseModal.style.display = "block";
+/* cancelAnimation function - cancels all three objects from moving in a game win or lose scenario */
+const cancelAnimation = () => {
     cancelAnimationFrame(snakeObj.aniFrame);
     cancelAnimationFrame(hawk1Obj.aniFrame);
     cancelAnimationFrame(hawk2Obj.aniFrame);
 }
 
+// event Handlers for win and lose conditions
+const lose = () => {
+    loseModal.style.display = "block";
+    cancelAnimation();
+}
+
 const win = () => {
     winModal.style.display = "block";
-    cancelAnimationFrame(snakeObj.aniFrame);
-    cancelAnimationFrame(hawk1Obj.aniFrame);
-    cancelAnimationFrame(hawk2Obj.aniFrame);
+    cancelAnimation();
 }
 
 const stopPropagation = (ev) => {
@@ -57,14 +60,15 @@ const listenForStartArea = () => {
 const listenForWinning = () => {
     nest.addEventListener('mouseenter', win);
 }
+
 const stopWinningPropagation = () => {
     nest.addEventListener('mouseover', stopPropagation);
 }
+
 /*
  event to initiate game, start the animations, set up
 the event listeners for the win/lose conditions and make the start button disappear
 */
-
 const gameStart = (ev) => {
     ev.preventDefault();
     startButton.style.display = 'none'; // makes start button disappear
