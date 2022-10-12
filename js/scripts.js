@@ -20,7 +20,7 @@ const Creature = function(element, aniFrame, startPos, endPos, action = 'moveRig
     this.startPos = startPos;  // The starting position in px
     this.endPos = endPos;      // The ending position in px
     this.action = action;      // For the direction of movement
-    this.currentPos = this.startPos;
+    this.currentPos = this.startPos;  // Sets the start position of each creature to the current position
 }
 
 // Constants to construct each creature
