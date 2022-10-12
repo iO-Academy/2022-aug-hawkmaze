@@ -10,6 +10,7 @@ const startArea = document.querySelector('.startArea');
 const hawk1 = document.querySelector('.hawk1');
 const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
+const timerElement = document.querySelector('.timer h2');
 
 // Constants to construct each creature
 const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
@@ -55,6 +56,7 @@ const listenForLeaveMaze = () => {
 
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
+    startArea.addEventListener(('mouseleave'), startTimer);
 }
 
 const listenForWinning = () => {
@@ -71,7 +73,7 @@ const startTimer = () => {
     let secondsLeft = 45; // change this to adjust duration of the game
     timer = setInterval(() => {
         secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
-        element.textContent = "00:" + secondsLeft;
+        timerElement.textContent = "00:" + secondsLeft;
         --secondsLeft;
         if (secondsLeft < 0) {
             clearInterval(timer);
