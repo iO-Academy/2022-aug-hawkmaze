@@ -29,11 +29,13 @@ const cancelAnimation = () => {
 const lose = () => {
     loseModal.style.display = "block";
     cancelAnimation();
+    clearInterval(timer);
 }
 
 const win = () => {
     winModal.style.display = "block";
     cancelAnimation();
+    clearInterval(timer);
 }
 
 const stopPropagation = (ev) => {
@@ -70,13 +72,12 @@ const stopWinningPropagation = () => {
 // countdown timer function - It only works for durations less than 60 seconds
 let timer;
 const startTimer = () => {
-    let secondsLeft = 45; // change this to adjust duration of the game
+    let secondsLeft = 44; // change this to adjust duration of the game
     timer = setInterval(() => {
         secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
         timerElement.textContent = "00:" + secondsLeft;
         --secondsLeft;
         if (secondsLeft < 0) {
-            clearInterval(timer);
             lose();
         }
     }, 1000)
