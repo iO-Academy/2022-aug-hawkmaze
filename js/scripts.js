@@ -9,68 +9,46 @@ const hawk1 = document.querySelector('.hawk1');
 const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
 
-/* -----Animation----- */
-let hawk1AniFrame;
-let actionHawk1 = 'moveRight';
-let hawk1Horizontal = 50;
-
-const hawk1Move = () => {
-    if (actionHawk1 === 'moveRight') {
-        hawk1Horizontal -= 2;
-        if (hawk1Horizontal <= 50) {
-            actionHawk1 = 'moveLeft';
-        }
-    } else {
-        hawk1Horizontal += 2;
-        if (hawk1Horizontal > 300) {
-            actionHawk1 = 'moveRight';
-        }
-    }
-    hawk1.style.left = hawk1Horizontal + 'px';
-    hawk1AniFrame = requestAnimationFrame(hawk1Move);
+/* -----Animations----- */
+/*
+ Constructor for the creatures
+ Arrow functions cannot be used as constructors and will throw an error when used with new
+* */
+const Creature = function(element, aniFrame, startPos, endPos, action = 'moveRight') {
+    this.element = element;    // For which element you're selecting
+    this.aniFrame = aniFrame;  // Empty variable which to be redefined with a callback to the animation function
+    this.startPos = startPos;  // The starting position in px
+    this.endPos = endPos;      // The ending position in px
+    this.action = action;      // For the direction of movement
+    this.currentPos = this.startPos;
 }
 
-let hawk2AniFrame;
-let actionHawk2 = 'moveRight';
-let hawk2Horizontal = 480;
+// Constants to construct each creature
+const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
+const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
+const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
 
-const hawk2Move = () => {
-    if (actionHawk2 === 'moveRight') {
-        hawk2Horizontal -= 2;
-        if (hawk2Horizontal <= 480) {
-            actionHawk2 = 'moveLeft';
+// Function to animate each creature using the properties of each object
+const creatureMoveHoriz = (timestamp, creature) => {
+    if (creature.action === 'moveRight') {
+        creature.currentPos += 2;
+        if (creature.currentPos >= creature.endPos) {
+            creature.action = 'moveLeft';
         }
     } else {
-        hawk2Horizontal += 2;
-        if (hawk2Horizontal > 663) {
-            actionHawk2 = 'moveRight';
+        creature.currentPos -= 2;
+        if (creature.currentPos <= creature.startPos) {
+            creature.action = 'moveRight';
         }
     }
-    hawk2.style.left = hawk2Horizontal + 'px';
-    hawk2AniFrame = requestAnimationFrame(hawk2Move);
+    creature.element.style.left = creature.currentPos + 'px';
+    creature.aniFrame = requestAnimationFrame(
+        (timestamp) => {
+            creatureMoveHoriz(timestamp, creature)
+        });
 }
 
-let snakeAniFrame;
-let actionSnake = 'moveRight';
-let snakeHorizontal = 200;
-
-const snakeMove = () => {
-    if (actionSnake === 'moveRight') {
-        snakeHorizontal -= 2;
-        if (snakeHorizontal <= 200) {
-            actionSnake = 'moveLeft';
-        }
-    } else {
-        snakeHorizontal += 2;
-        if (snakeHorizontal > 450) {
-            actionSnake = 'moveRight';
-        }
-    }
-    snake.style.left = snakeHorizontal + 'px';
-    snakeAniFrame = requestAnimationFrame(snakeMove);
-}
-
-/* -----Main content section----- */
+/* -----Main content----- */
 // event Handlers for win and lose conditions
 const lose = () => {
     loseModal.style.display = "block";
@@ -123,9 +101,6 @@ const gameStart = (ev) => {
     listenForLeaveMaze();
 
     listenForStartArea();
-    /*
-    *  insert callbacks for animations
-    * */
 }
 
 startButton.addEventListener('click', gameStart);
