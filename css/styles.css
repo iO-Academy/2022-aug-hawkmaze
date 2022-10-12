@@ -96,6 +96,17 @@ img {
 }
 
 /* -----Main content section----- */
+/* -----Timer----- */
+.timer {
+    background-color: var(--dark);
+    width: 12rem;
+    border-radius: 1rem;
+
+    position: absolute;
+    right: 2rem;
+}
+
+/* -----Modals----- */
 .content {
     height: 32rem;
     width: 50rem;

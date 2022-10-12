@@ -10,11 +10,14 @@ const startArea = document.querySelector('.startArea');
 const hawk1 = document.querySelector('.hawk1');
 const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
+const timerElement = document.querySelector('.timer h2');
 
 // Constants to construct each creature
 const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
 const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
 const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
+
+let secondsLeft = 45; // change this to adjust duration of the game
 
 /* -----Main content----- */
 /* cancelAnimation function - cancels all three objects from moving in a game win or lose scenario */
@@ -28,11 +31,13 @@ const cancelAnimation = () => {
 const lose = () => {
     loseModal.style.display = "block";
     cancelAnimation();
+    clearInterval(timer);
 }
 
 const win = () => {
     winModal.style.display = "block";
     cancelAnimation();
+    clearInterval(timer);
 }
 
 const stopPropagation = (ev) => {
@@ -55,6 +60,7 @@ const listenForLeaveMaze = () => {
 
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
+    startArea.addEventListener('mouseleave', () => {startTimer(secondsLeft)});
 }
 
 const listenForWinning = () => {
@@ -63,6 +69,19 @@ const listenForWinning = () => {
 
 const stopWinningPropagation = () => {
     nest.addEventListener('mouseover', stopPropagation);
+}
+
+// countdown timer function - It only works for durations less than 60 seconds
+let timer;
+const startTimer = (secondsLeft) => {
+    timer = setInterval(() => {
+        secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
+        timerElement.textContent = "00:" + (secondsLeft - 1);
+        --secondsLeft;
+        if (secondsLeft < 0) {
+            lose();
+        }
+    }, 1000)
 }
 
 /*
@@ -79,6 +98,7 @@ const gameStart = (ev) => {
     listenForCollisions();
     listenForLeaveMaze();
 
+    timerElement.textContent = "00:" + secondsLeft;
     listenForStartArea();
 
     // start of animations
