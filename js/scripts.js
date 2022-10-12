@@ -65,6 +65,21 @@ const stopWinningPropagation = () => {
     nest.addEventListener('mouseover', stopPropagation);
 }
 
+// countdown timer function - It only works for durations less than 60 seconds
+let timer;
+const startTimer = () => {
+    let secondsLeft = 45; // change this to adjust duration of the game
+    timer = setInterval(() => {
+        secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
+        element.textContent = "00:" + secondsLeft;
+        --secondsLeft;
+        if (secondsLeft < 0) {
+            clearInterval(timer);
+            lose();
+        }
+    }, 1000)
+}
+
 /*
  event to initiate game, start the animations, set up
 the event listeners for the win/lose conditions and make the start button disappear
