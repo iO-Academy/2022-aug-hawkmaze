@@ -72,15 +72,9 @@ const gameStart = (ev) => {
     listenForStartArea();
 
     // start of animations
-    requestAnimationFrame((timestamp) => {
-        creatureMoveHoriz(timestamp, snakeObj);
-    });
-    requestAnimationFrame((timestamp) => {
-        creatureMoveHoriz(timestamp, hawk1Obj);
-    });
-    requestAnimationFrame((timestamp) => {
-        creatureMoveHoriz(timestamp, hawk2Obj);
-    });
+    creatureMoveHoriz(null, snakeObj);
+    creatureMoveHoriz(null, hawk1Obj);
+    creatureMoveHoriz(null, hawk2Obj);
 }
 
 startButton.addEventListener('click', gameStart);
