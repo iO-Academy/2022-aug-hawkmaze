@@ -1,3 +1,5 @@
+import {Creature, creatureMoveHoriz} from './animation.js';
+
 const winModal = document.querySelector('#winModal');
 const loseModal = document.querySelector('#loseModal');
 const collision = document.querySelectorAll('.collision');
@@ -8,6 +10,11 @@ const startArea = document.querySelector('.startArea');
 const hawk1 = document.querySelector('.hawk1');
 const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
+
+// Constants to construct each creature
+const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
+const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
+const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
 
 /* -----Main content----- */
 // event Handlers for win and lose conditions
@@ -51,6 +58,7 @@ const stopWinningPropagation = () => {
  event to initiate game, start the animations, set up
 the event listeners for the win/lose conditions and make the start button disappear
 */
+
 const gameStart = (ev) => {
     ev.preventDefault();
     startButton.style.display = 'none'; // makes start button disappear
@@ -62,6 +70,17 @@ const gameStart = (ev) => {
     listenForLeaveMaze();
 
     listenForStartArea();
+
+    // start of animations
+    requestAnimationFrame((timestamp) => {
+        creatureMoveHoriz(timestamp, snakeObj);
+    });
+    requestAnimationFrame((timestamp) => {
+        creatureMoveHoriz(timestamp, hawk1Obj);
+    });
+    requestAnimationFrame((timestamp) => {
+        creatureMoveHoriz(timestamp, hawk2Obj);
+    });
 }
 
 startButton.addEventListener('click', gameStart);
