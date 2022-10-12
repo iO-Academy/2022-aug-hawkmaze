@@ -20,10 +20,16 @@ const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
 // event Handlers for win and lose conditions
 const lose = () => {
     loseModal.style.display = "block";
+    cancelAnimationFrame(snakeObj.aniFrame);
+    cancelAnimationFrame(hawk1Obj.aniFrame);
+    cancelAnimationFrame(hawk2Obj.aniFrame);
 }
 
 const win = () => {
     winModal.style.display = "block";
+    cancelAnimationFrame(snakeObj.aniFrame);
+    cancelAnimationFrame(hawk1Obj.aniFrame);
+    cancelAnimationFrame(hawk2Obj.aniFrame);
 }
 
 const stopPropagation = (ev) => {
