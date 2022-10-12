@@ -17,6 +17,8 @@ const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
 const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
 const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
 
+let secondsLeft = 45; // change this to adjust duration of the game
+
 /* -----Main content----- */
 /* cancelAnimation function - cancels all three objects from moving in a game win or lose scenario */
 const cancelAnimation = () => {
@@ -58,7 +60,7 @@ const listenForLeaveMaze = () => {
 
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
-    startArea.addEventListener(('mouseleave'), startTimer);
+    startArea.addEventListener('mouseleave', () => {startTimer(secondsLeft)});
 }
 
 const listenForWinning = () => {
@@ -71,11 +73,10 @@ const stopWinningPropagation = () => {
 
 // countdown timer function - It only works for durations less than 60 seconds
 let timer;
-const startTimer = () => {
-    let secondsLeft = 44; // change this to adjust duration of the game
+const startTimer = (secondsLeft) => {
     timer = setInterval(() => {
         secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
-        timerElement.textContent = "00:" + secondsLeft;
+        timerElement.textContent = "00:" + (secondsLeft - 1);
         --secondsLeft;
         if (secondsLeft < 0) {
             lose();
@@ -97,6 +98,7 @@ const gameStart = (ev) => {
     listenForCollisions();
     listenForLeaveMaze();
 
+    timerElement.textContent = "00:" + secondsLeft;
     listenForStartArea();
 
     // start of animations
