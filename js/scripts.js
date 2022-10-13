@@ -1,4 +1,4 @@
-import {Creature, creatureMoveHoriz} from './animation.js';
+import {dynamicObject, objectMove} from './animation.js';
 
 const winModal = document.querySelector('#winModal');
 const loseModal = document.querySelector('#loseModal');
@@ -10,12 +10,15 @@ const startArea = document.querySelector('.startArea');
 const hawk1 = document.querySelector('.hawk1');
 const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
+const startArrow = document.querySelector('.startArrow');
 const timerElement = document.querySelector('.timer h2');
 
-// Constants to construct each creature
-const hawk1Obj = new Creature(hawk1, null, 50, 300, 'moveRight');
-const hawk2Obj = new Creature(hawk2, null, 480, 663, 'moveRight');
-const snakeObj = new Creature(snake, null, 250, 450, 'moveRight');
+// Constants to construct each dynamicObject
+const hawk1Obj = new dynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
+const hawk2Obj = new dynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
+const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
+const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
+
 
 let secondsLeft = 45; // change this to adjust duration of the game
 
@@ -102,9 +105,9 @@ const gameStart = (ev) => {
     listenForStartArea();
 
     // start of animations
-    creatureMoveHoriz(null, snakeObj);
-    creatureMoveHoriz(null, hawk1Obj);
-    creatureMoveHoriz(null, hawk2Obj);
+    objectMove(null, snakeObj);
+    objectMove(null, hawk1Obj);
+    objectMove(null, hawk2Obj);
 }
 
 startButton.addEventListener('click', gameStart);
