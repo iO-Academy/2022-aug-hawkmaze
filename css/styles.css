@@ -189,7 +189,7 @@ img {
 .line {
     background-color: var(--brown);
     position: absolute;
-    cursor: crosshair;
+    cursor: url('../images/cursor.png'), auto;
 }
 
 .thick {
