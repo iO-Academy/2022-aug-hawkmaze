@@ -38,13 +38,13 @@ const cancelAnimation = () => {
 
 // event Handlers for win and lose conditions
 const lose = () => {
-    loseModal.style.display = "block";
+    loseModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
 }
 
 const win = () => {
-    winModal.style.display = "block";
+    winModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
 }
@@ -84,8 +84,8 @@ const stopWinningPropagation = () => {
 let timer;
 const startTimer = (secondsLeft) => {
     timer = setInterval(() => {
-        secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
-        timerElement.textContent = "00:" + (secondsLeft - 1);
+        secondsLeft = (secondsLeft < 10) ? ('0' + secondsLeft) : secondsLeft;
+        timerElement.textContent = '00:' + (secondsLeft - 1);
         --secondsLeft;
         if (secondsLeft < 0) {
             lose();
@@ -95,7 +95,7 @@ const startTimer = (secondsLeft) => {
 
 /*
  event to initiate game, start the animations, set up
-the event listeners for the win/lose conditions and make the start button disappear
+ the event listeners for the win/lose conditions and make the start button disappear
 */
 const gameStart = (ev) => {
     listenForWinning();
@@ -104,7 +104,7 @@ const gameStart = (ev) => {
     listenForCollisions();
     listenForLeaveMaze();
 
-    timerElement.textContent = "00:" + secondsLeft;
+    timerElement.textContent = '00:' + secondsLeft;
     listenForStartArea();
 
     // start of animations
@@ -118,7 +118,7 @@ let countdown;
 const startCountdown = (ev) => {
     ev.preventDefault();
     startButton.style.display = 'none'; // makes start button disappear
-    countdownElement.style.display = "block";
+    countdownElement.style.display = 'block';
     countdownH2.textContent = '3';
     objectMove(null, arrowObj);
     countdown = setInterval(() => {
@@ -131,7 +131,7 @@ const startCountdown = (ev) => {
             countdownH2.textContent = 'GO!';
         } if (timeLeft === -2) {
             clearInterval(countdown);
-            countdownElement.style.display = "none";
+            countdownElement.style.display = 'none';
             gameStart();
         }
     }, 1000);
