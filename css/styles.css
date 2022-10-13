@@ -95,6 +95,30 @@ img {
     background-color: var(--dark);
 }
 
+/* -----Countdown Popups----- */
+.modalContent.countdown {
+    width: 18rem;
+}
+
+.modalContent .modalNum {
+    font-size: 10rem;
+    padding: 2rem 0 3rem;
+}
+
+.modalContent h2 {
+    font-size: 6rem;
+    margin: 1rem 0;
+    font-weight: lighter;
+    line-height: 1rem;
+}
+
+.startArrow {
+    position: absolute;
+    left: 90px;
+    top: 160px;
+    width: 14rem;
+}
+
 /* -----Main content section----- */
 /* -----Timer----- */
 .timer {
