@@ -180,6 +180,7 @@ img {
 .content .instructions {
     width: 70%;
     margin: 0 auto;
+    line-height: 1.3rem;
 }
 
 /* -----Maze section----- */
