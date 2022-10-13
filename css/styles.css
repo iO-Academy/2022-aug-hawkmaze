@@ -170,17 +170,17 @@ img {
     width: 6rem;
     padding: 0;
     margin: 0;
-    top: 65px;
-    left: 20px;
+    top: 90px;
+    left: 25px;
     position: absolute;
     z-index: 10;
 }
 
 .startBush {
-    width: 8rem;
+    width: 10rem;
     padding: 0;
     margin: 0;
-    top: 0;
+    top: 45px;
     left: 0;
     position: absolute;
     z-index: 5;
