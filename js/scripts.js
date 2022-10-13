@@ -1,4 +1,4 @@
-import {dynamicObject, objectMove} from './animation.js';
+import {DynamicObject, objectMove} from './animation.js';
 
 const winModal = document.querySelector('#winModal');
 const loseModal = document.querySelector('#loseModal');
@@ -16,10 +16,10 @@ const countdownElement = document.querySelector('#countdownModal');
 const countdownH2 = document.querySelector('.modalNum');
 
 // Constants to construct each dynamicObject
-const hawk1Obj = new dynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
-const hawk2Obj = new dynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
-const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
-const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
+const hawk1Obj = new DynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
+const hawk2Obj = new DynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
+const snakeObj = new DynamicObject(snake, null, 250, 450, 2, 'moveRight');
+const arrowObj = new DynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 // Game timer start time - change this to adjust duration of the game
 let secondsLeft = 45;
