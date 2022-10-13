@@ -1,11 +1,4 @@
 # 2022 August  - Hawk Cohort - "Tony the Hawk's Pro Mazer"
----
-
-# Table of Contents
-1. [About](#1-about)
-2. [Installation](#2-installation)
-3. [Assets](#3-assets)
----
 
 ## 1. About
 ### Content
@@ -22,7 +15,6 @@ Group project with the objective of build a Javascript maze game to test knowled
 + HTML5 - https://html.spec.whatwg.org/
 + CSS3
 + Git - https://github.com/com
----
 
 ## 2. Installation
 Follow the next steps to install locally:
@@ -34,7 +26,6 @@ git clone https://github.com/iO-Academy/2022-aug-hawkmaze.git
 3. Navigate to the folder where you have cloned the repository to.
 4. Open "index.html" using your Browser of choice.
 5. Play the game!
----
 
 ## 3. Assets
 Assets used have been collected from:
@@ -42,7 +33,6 @@ Assets used have been collected from:
 + Wireframes and cursor - https://www.figma.com/
 + Icons - https://favicon.io/
 + Fonts  - https://fonts.google.com/
----
 
 ## 4. Optimization
 The game has been designed and optimized for a 1024x768 resolution at 100%.
