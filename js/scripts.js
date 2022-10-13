@@ -2,6 +2,7 @@ import {DynamicObject, objectMove} from './animation.js';
 
 const winModal = document.querySelector('#winModal');
 const loseModal = document.querySelector('#loseModal');
+const loseTimeUpModal = document.querySelector('#loseTimeUpModal');
 const collision = document.querySelectorAll('.collision');
 const nest = document.querySelector('.nest');
 const startButton = document.querySelector('.startBtn');
@@ -40,6 +41,12 @@ const cancelAnimation = () => {
 // event Handlers for win and lose conditions
 const lose = () => {
     loseModal.style.display = 'block';
+    cancelAnimation();
+    clearInterval(timer);
+}
+
+const loseTimeUp = () => {
+    loseTimeUpModal.style.display = "block";
     cancelAnimation();
     clearInterval(timer);
 }
@@ -85,11 +92,11 @@ const stopWinningPropagation = () => {
 let timer;
 const startTimer = (secondsLeft) => {
     timer = setInterval(() => {
+        secondsLeft -= 1;
         secondsLeft = (secondsLeft < 10) ? ('0' + secondsLeft) : secondsLeft;
-        timerElement.textContent = '00:' + (secondsLeft - 1);
-        --secondsLeft;
-        if (secondsLeft < 0) {
-            lose();
+        timerElement.textContent = '00:' + secondsLeft;
+        if (secondsLeft < 1) {
+            loseTimeUp();
         }
     }, 1000)
 }
