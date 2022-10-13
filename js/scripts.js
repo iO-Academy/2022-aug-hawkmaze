@@ -19,7 +19,6 @@ const hawk2Obj = new dynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
 const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
-
 let secondsLeft = 45; // change this to adjust duration of the game
 
 /* -----Main content----- */
