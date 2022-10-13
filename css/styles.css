@@ -61,7 +61,7 @@ img {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    display: none;
+    /*display: none;*/
     overflow: auto;
     z-index: 15;
 }
@@ -304,5 +304,19 @@ img {
     width: 11rem;
     top: 0;
     left: 300px;
+    position: absolute;
+}
+
+.star1 {
+    width: 3rem;
+    top: 210px;
+    left: 510px;
+    position: absolute;
+}
+
+.star2 {
+    width: 3rem;
+    top: 450px;
+    left: 889px;
     position: absolute;
 }
