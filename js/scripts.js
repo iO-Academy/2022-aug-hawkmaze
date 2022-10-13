@@ -21,10 +21,12 @@ const hawk2Obj = new dynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
 const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
-let secondsLeft = 45; // change this to adjust duration of the game
+// Game timer start time - change this to adjust duration of the game
+let secondsLeft = 45;
 
-let timeLeft = 2; // change this to adjust countdown timer.
-// note - start number is called with modal so will also need to be updated
+// Countdown timer - change this to adjust countdown duration
+// note - start number is called with modal so will also need to be updated. timeLeft is second num of countdown
+let timeLeft = 2;
 
 /* -----Main content----- */
 /* cancelAnimation function - cancels all three objects from moving in a game win or lose scenario */
