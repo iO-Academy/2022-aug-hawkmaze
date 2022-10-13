@@ -137,7 +137,7 @@ const startCountdown = (ev) => {
         --timeLeft;
         if (timeLeft === -1) {
             countdownH2.textContent = 'GO!';
-            countdownMessage.innerHTML = '';
+            countdownMessage.remove();
         } if (timeLeft === -2) {
             clearInterval(countdown);
             countdownElement.style.display = 'none';
