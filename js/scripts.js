@@ -1,6 +1,7 @@
 import {DynamicObject, objectMove} from './animation.js';
 
 const winModal = document.querySelector('#winModal');
+const winModalTime = document.querySelector('#winModalTime');
 const loseModal = document.querySelector('#loseModal');
 const loseTimeUpModal = document.querySelector('#loseTimeUpModal');
 const collision = document.querySelectorAll('.collision');
@@ -24,7 +25,10 @@ const snakeObj = new DynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new DynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 // Game timer start time - change this to adjust duration of the game
-let secondsLeft = 45;
+const gameTime = 45; // change this to adjust duration of the game
+let winTime;
+let timer;
+
 
 // Countdown timer - change this to adjust countdown duration
 // note - start number is called with modal so will also need to be updated. timeLeft is second num of countdown
@@ -52,9 +56,10 @@ const loseTimeUp = () => {
 }
 
 const win = () => {
-    winModal.style.display = 'block';
+    winModal.style.display = "block";
     cancelAnimation();
     clearInterval(timer);
+    winModalTime.textContent = "Time completed in: " + (winTime) + " seconds!";
 }
 
 const stopPropagation = (ev) => {
@@ -89,16 +94,16 @@ const stopWinningPropagation = () => {
 }
 
 // countdown timer function - It only works for durations less than 60 seconds
-let timer;
 const startTimer = (secondsLeft) => {
     timer = setInterval(() => {
         secondsLeft -= 1;
         secondsLeft = (secondsLeft < 10) ? ('0' + secondsLeft) : secondsLeft;
         timerElement.textContent = '00:' + secondsLeft;
+        winTime = gameTime - secondsLeft;
         if (secondsLeft < 1) {
             loseTimeUp();
         }
-    }, 1000)
+    }, 1000);
 }
 
 /*
