@@ -1,4 +1,4 @@
-import {dynamicObject, objectMove} from './animation.js';
+import {DynamicObject, objectMove} from './animation.js';
 
 const winModal = document.querySelector('#winModal');
 const loseModal = document.querySelector('#loseModal');
@@ -16,10 +16,10 @@ const countdownElement = document.querySelector('#countdownModal');
 const countdownH2 = document.querySelector('.modalNum');
 
 // Constants to construct each dynamicObject
-const hawk1Obj = new dynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
-const hawk2Obj = new dynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
-const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
-const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
+const hawk1Obj = new DynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
+const hawk2Obj = new DynamicObject(hawk2, null, 480, 663, 2, 'moveRight');
+const snakeObj = new DynamicObject(snake, null, 250, 450, 2, 'moveRight');
+const arrowObj = new DynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 // Game timer start time - change this to adjust duration of the game
 let secondsLeft = 45;
@@ -38,13 +38,13 @@ const cancelAnimation = () => {
 
 // event Handlers for win and lose conditions
 const lose = () => {
-    loseModal.style.display = "block";
+    loseModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
 }
 
 const win = () => {
-    winModal.style.display = "block";
+    winModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
 }
@@ -84,8 +84,8 @@ const stopWinningPropagation = () => {
 let timer;
 const startTimer = (secondsLeft) => {
     timer = setInterval(() => {
-        secondsLeft = (secondsLeft < 10) ? ("0" + secondsLeft) : secondsLeft;
-        timerElement.textContent = "00:" + (secondsLeft - 1);
+        secondsLeft = (secondsLeft < 10) ? ('0' + secondsLeft) : secondsLeft;
+        timerElement.textContent = '00:' + (secondsLeft - 1);
         --secondsLeft;
         if (secondsLeft < 0) {
             lose();
@@ -95,7 +95,7 @@ const startTimer = (secondsLeft) => {
 
 /*
  event to initiate game, start the animations, set up
-the event listeners for the win/lose conditions and make the start button disappear
+ the event listeners for the win/lose conditions and make the start button disappear
 */
 const gameStart = (ev) => {
     listenForWinning();
@@ -104,7 +104,7 @@ const gameStart = (ev) => {
     listenForCollisions();
     listenForLeaveMaze();
 
-    timerElement.textContent = "00:" + secondsLeft;
+    timerElement.textContent = '00:' + secondsLeft;
     listenForStartArea();
 
     // start of animations
@@ -118,7 +118,7 @@ let countdown;
 const startCountdown = (ev) => {
     ev.preventDefault();
     startButton.style.display = 'none'; // makes start button disappear
-    countdownElement.style.display = "block";
+    countdownElement.style.display = 'block';
     countdownH2.textContent = '3';
     objectMove(null, arrowObj);
     countdown = setInterval(() => {
@@ -131,7 +131,7 @@ const startCountdown = (ev) => {
             countdownH2.textContent = 'GO!';
         } if (timeLeft === -2) {
             clearInterval(countdown);
-            countdownElement.style.display = "none";
+            countdownElement.style.display = 'none';
             gameStart();
         }
     }, 1000);
