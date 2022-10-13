@@ -8,12 +8,13 @@ const startButton = document.querySelector('.startBtn');
 const maze = document.querySelectorAll('.line');
 const startArea = document.querySelector('.startArea');
 const hawk1 = document.querySelector('.hawk1');
-const hawk2 = document.querySelector('.hawk2');
+const hawk2 = document.querySelector('.skateboard-snake');
 const snake = document.querySelector('.snake');
 const startArrow = document.querySelector('.startArrow');
 const timerElement = document.querySelector('.timer h2');
 const countdownElement = document.querySelector('#countdownModal');
 const countdownH2 = document.querySelector('.modalNum');
+const countdownMessage = document.querySelector('.countdownMessage');
 
 // Constants to construct each dynamicObject
 const hawk1Obj = new DynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
@@ -129,6 +130,7 @@ const startCountdown = (ev) => {
         --timeLeft;
         if (timeLeft === -1) {
             countdownH2.textContent = 'GO!';
+            countdownMessage.innerHTML = '';
         } if (timeLeft === -2) {
             clearInterval(countdown);
             countdownElement.style.display = 'none';

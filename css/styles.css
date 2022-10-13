@@ -170,17 +170,17 @@ img {
     width: 6rem;
     padding: 0;
     margin: 0;
-    top: 65px;
-    left: 20px;
+    top: 90px;
+    left: 25px;
     position: absolute;
     z-index: 10;
 }
 
 .startBush {
-    width: 8rem;
+    width: 10rem;
     padding: 0;
     margin: 0;
-    top: 0;
+    top: 45px;
     left: 0;
     position: absolute;
     z-index: 5;
@@ -189,7 +189,7 @@ img {
 .line {
     background-color: var(--brown);
     position: absolute;
-    cursor: crosshair;
+    cursor: url('../images/cursor.png'), auto;
 }
 
 .thick {
@@ -265,8 +265,8 @@ img {
     position: absolute;
 }
 
-.hawk2 {
-    width: 6rem;
+.skateboard-snake {
+    width: 5rem;
     top: 240px;
     left: 480px;
     position: absolute;
@@ -275,7 +275,7 @@ img {
 .snake {
     width: 6rem;
     top: 160px;
-    left: 200px;
+    left: 250px;
     position: absolute;
 }
 
@@ -297,5 +297,12 @@ img {
     width: 6rem;
     top: 440px;
     left: 650px;
+    position: absolute;
+}
+
+.ramp {
+    width: 11rem;
+    top: 0;
+    left: 300px;
     position: absolute;
 }
