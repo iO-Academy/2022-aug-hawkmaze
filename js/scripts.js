@@ -12,6 +12,8 @@ const hawk2 = document.querySelector('.hawk2');
 const snake = document.querySelector('.snake');
 const startArrow = document.querySelector('.startArrow');
 const timerElement = document.querySelector('.timer h2');
+const countdownElement = document.querySelector('#countdownModal');
+const countdownH2 = document.querySelector('.modalNum');
 
 // Constants to construct each dynamicObject
 const hawk1Obj = new dynamicObject(hawk1, null, 50, 300, 2, 'moveRight');
@@ -20,6 +22,9 @@ const snakeObj = new dynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new dynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 let secondsLeft = 45; // change this to adjust duration of the game
+
+let timeLeft = 2; // change this to adjust countdown timer.
+// note - start number is called with modal so will also need to be updated
 
 /* -----Main content----- */
 /* cancelAnimation function - cancels all three objects from moving in a game win or lose scenario */
@@ -91,9 +96,6 @@ const startTimer = (secondsLeft) => {
 the event listeners for the win/lose conditions and make the start button disappear
 */
 const gameStart = (ev) => {
-    ev.preventDefault();
-    startButton.style.display = 'none'; // makes start button disappear
-
     listenForWinning();
     stopWinningPropagation();
 
@@ -109,4 +111,28 @@ const gameStart = (ev) => {
     objectMove(null, hawk2Obj);
 }
 
-startButton.addEventListener('click', gameStart);
+// Countdown Timer - activated on start button
+let countdown;
+const startCountdown = (ev) => {
+    ev.preventDefault();
+    startButton.style.display = 'none'; // makes start button disappear
+    countdownElement.style.display = "block";
+    countdownH2.textContent = '3';
+    objectMove(null, arrowObj);
+    countdown = setInterval(() => {
+        let seconds = parseInt(timeLeft % 60, 10);
+        if (timeLeft > 0) {
+            countdownH2.textContent = seconds;
+        }
+        --timeLeft;
+        if (timeLeft === -1) {
+            countdownH2.textContent = 'GO!';
+        } if (timeLeft === -2) {
+            clearInterval(countdown);
+            countdownElement.style.display = "none";
+            gameStart();
+        }
+    }, 1000);
+}
+
+startButton.addEventListener('click', startCountdown);
