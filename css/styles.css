@@ -266,7 +266,7 @@ img {
 }
 
 .hawk2 {
-    width: 6rem;
+    width: 5rem;
     top: 240px;
     left: 480px;
     position: absolute;
@@ -275,7 +275,7 @@ img {
 .snake {
     width: 6rem;
     top: 160px;
-    left: 200px;
+    left: 250px;
     position: absolute;
 }
 
