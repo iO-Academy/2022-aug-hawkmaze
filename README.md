@@ -1,12 +1,6 @@
 # 2022 August  - Hawk Cohort - "Tony the Hawk's Pro Mazer"
 ---
 
-# Table of Contents
-1. [About](#1-about)
-2. [Installation](#2-installation)
-3. [Assets](#3-assets)
----
-
 ## 1. About
 ### Content
 Project 3 relating to module 4 of iO Full-Stack Web Development.
@@ -45,4 +39,4 @@ Assets used have been collected from:
 ---
 
 ## 4. Optimization
-The game has been designed and optimized for a 1024x768 resolution at 100%.
+The game has been designed and optimized for a 1440x768 resolution at 100%.
