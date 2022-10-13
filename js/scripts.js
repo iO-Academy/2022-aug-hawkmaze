@@ -82,7 +82,7 @@ const listenForLeaveMaze = () => {
 
 const listenForStartArea = () => {
     startArea.addEventListener('mouseover', stopPropagation);
-    startArea.addEventListener('mouseleave', () => {startTimer(secondsLeft)});
+    startArea.addEventListener('mouseleave', () => {startTimer(gameTime)});
 }
 
 const listenForWinning = () => {
@@ -117,7 +117,7 @@ const gameStart = (ev) => {
     listenForCollisions();
     listenForLeaveMaze();
 
-    timerElement.textContent = '00:' + secondsLeft;
+    timerElement.textContent = '00:' + gameTime;
     listenForStartArea();
 
     // start of animations
@@ -142,7 +142,7 @@ const startCountdown = (ev) => {
         --timeLeft;
         if (timeLeft === -1) {
             countdownH2.textContent = 'GO!';
-            countdownMessage.innerHTML = '';
+            countdownMessage.remove();
         } if (timeLeft === -2) {
             clearInterval(countdown);
             countdownElement.style.display = 'none';

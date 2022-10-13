@@ -18,6 +18,8 @@ a:active {
 :root {
     --dark: #2d472a;
     --light: #406343;
+    --red-light: #802e2e;
+    --red-dark: #552929;
     --brown: #635340;
     --white: #ffffff;
     --dim: #00000050;
@@ -93,6 +95,28 @@ img {
 
 .modalContent a {
     background-color: var(--dark);
+}
+
+.loss {
+    background-color: var(--red-light);
+}
+
+.loss a {
+    background-color: var(--red-dark);
+}
+
+.star1 {
+    width: 3rem;
+    top: 210px;
+    left: 510px;
+    position: absolute;
+}
+
+.star2 {
+    width: 3rem;
+    top: 450px;
+    left: 889px;
+    position: absolute;
 }
 
 /* -----Countdown Popups----- */
