@@ -25,7 +25,7 @@ const snakeObj = new DynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new DynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 // Game timer start time - change this to adjust duration of the game
-const gameTime = 30; // change this to adjust duration of the game
+const gameTime = 30;
 let winTime;
 let timer;
 
@@ -49,16 +49,16 @@ const lose = () => {
 }
 
 const loseTimeUp = () => {
-    loseTimeUpModal.style.display = "block";
+    loseTimeUpModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
 }
 
 const win = () => {
-    winModal.style.display = "block";
+    winModal.style.display = 'block';
     cancelAnimation();
     clearInterval(timer);
-    winModalTime.textContent = "Time completed in: " + (winTime) + " seconds!";
+    winModalTime.textContent = 'Time completed in: ' + (winTime) + ' seconds!';
 }
 
 const stopPropagation = (ev) => {
