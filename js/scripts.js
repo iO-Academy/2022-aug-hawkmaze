@@ -134,9 +134,8 @@ const startCountdown = (ev) => {
     countdownH2.textContent = '3';
     objectMove(null, arrowObj);
     countdown = setInterval(() => {
-        let seconds = parseInt(timeLeft % 60, 10);
         if (timeLeft > 0) {
-            countdownH2.textContent = seconds;
+            countdownH2.innerText = timeLeft;
         }
         --timeLeft;
         if (timeLeft === -1) {
