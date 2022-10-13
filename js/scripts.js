@@ -25,7 +25,7 @@ const snakeObj = new DynamicObject(snake, null, 250, 450, 2, 'moveRight');
 const arrowObj = new DynamicObject(startArrow, null, 90, 120, 0.7, 'moveRight');
 
 // Game timer start time - change this to adjust duration of the game
-const gameTime = 45; // change this to adjust duration of the game
+const gameTime = 30; // change this to adjust duration of the game
 let winTime;
 let timer;
 
