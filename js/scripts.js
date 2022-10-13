@@ -29,7 +29,6 @@ const gameTime = 30; // change this to adjust duration of the game
 let winTime;
 let timer;
 
-
 // Countdown timer - change this to adjust countdown duration
 // note - start number is called with modal so will also need to be updated. timeLeft is second num of countdown
 let timeLeft = 2;
