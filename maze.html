@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tony the Hawk's Pro Maze</title>
+    <title>Tony the Hawk's Pro Mazer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/scripts.js" type="module"></script>
@@ -13,28 +14,40 @@
     <div id="countdownModal" class="modal">
         <div id="countdownPopup" class="modalContent countdown">
             <h2 class="modalNum"></h2>
-            <p>DO NOT LEAVE THE STARTING BUSH!</p>
+            <p class="countdownMessage">DO NOT LEAVE THE STARTING BUSH!</p>
         </div>
         <img src="images/arrow.png" alt="An arrow with the test 'stay here' written inside" class="startArrow">
     </div>
 
     <div id="loseModal" class="modal">
-        <div id="losePopup" class="modalContent">
+        <div id="losePopup" class="modalContent loss">
             <h2>YOU LOSE</h2>
             <p>Wow dude, you have been wiped out, press restart if you want to get back on your board.</p>
             <a href="maze.html">RESTART</a>
         </div>
     </div>
 
-    <div id="winModal" class="modal">
-        <div id="winPopup" class="modalContent">
-            <h2>YOU WIN</h2>
-            <p>You have won the game, your board is now fixed, do you want to carry on skateboarding?</p>
+    <div id="loseTimeUpModal" class="modal">
+        <div id="loseTimeUpPopup" class="modalContent loss">
+            <h2>TIME UP!</h2>
+            <p>You didn't get there in time! Tony feels so sad that his skateboard is still broken he has given up the
+                will to carry on.</p>
             <a href="maze.html">RESTART</a>
         </div>
     </div>
 
-    <h1>TONY THE HAWK'S PRO MAZE</h1>
+    <div id="winModal" class="modal">
+        <div id="winPopup" class="modalContent">
+            <img src="images/stars.png" alt="16-bit stars" class="star1">
+            <img src="images/stars.png" alt="16-bit stars" class="star2">
+            <h2>YOU WIN</h2>
+            <p>You have won the game, your board is now fixed, do you want to carry on skateboarding?</p>
+            <p id="winModalTime">Time completed in: </p>
+            <a href="maze.html">RESTART</a>
+        </div>
+    </div>
+
+    <h1>TONY THE HAWK'S PRO MAZER</h1>
     <div class="content collision">
         <div class="timer">
             <h2></h2>
@@ -53,11 +66,12 @@
         <div id="lineEight" class="line horizontal thin"></div>
         <div id="lineNine" class="line thin"></div>
         <img class="hawk1 collision" src="images/hawk1.png" alt="16-bit art of a Hawk">
-        <img class="hawk2 collision" src="images/hawk2.png" alt="16-bit art of a Hawk">
+        <img class="skateboard-snake collision" src="images/skateboard-snake.png" alt="16-bit art of a Hawk">
         <img class="snake collision" src="images/snake.png" alt="16-bit art of a Snake">
         <img class="tree1" src="images/tree1.png" alt="16-bit art of a tree">
         <img class="tree2" src="images/tree2.png" alt="16-bit art of a tree">
         <img class="nest" src="images/nest.png" alt="16-bit art of a birds nest">
+        <img class="ramp" src="images/ramp.png" alt="16-bit art of a ramp">
     </div>
     <a href="index.html">INSTRUCTIONS</a>
 </body>
